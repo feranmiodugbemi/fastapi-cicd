@@ -73,7 +73,7 @@ jobs:
           aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
 
       - name: Upload to S3
-        run: aws s3 cp api.zip s3://medium-aws-fastapi/api.zip
+        run: aws s3 cp api.zip s3://fastapi-cicd-716360905893/api.zip
 
       - name: Deploy new Lambda
         run: aws lambda update-function-code --function-name fastapi-cicd-lambda-716360905893 --s3-bucket fastapi-cicd-716360905893 --s3-key api.zip
