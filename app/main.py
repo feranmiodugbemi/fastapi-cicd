@@ -5,9 +5,13 @@ app = FastAPI(title='Serverless Lambda FastAPI')
 
 
 
-@app.get("/", root_path="/prod", tags=["Endpoint Test"])
+@app.get("/", tags=["Endpoint Test"])
 def main_endpoint_test():
     return {"message": "Welcome CI/CD Pipeline with GitHub Actions, yayyyy!"}
+
+@app.get("/health", tags=["Health Check"])
+def health_check():
+    return {"status": "healthy"}
 
 
 
